@@ -1,0 +1,13 @@
+name: reusable1
+on:
+  workflow_call:
+jobs:
+  reusable1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo =====
+          echo $MY_SECRET
+          echo =====
+        env:
+          MY_SECRET: ${{secrets.MY_SECRET}}
